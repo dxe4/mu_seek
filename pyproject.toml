@@ -1,0 +1,48 @@
+[project]
+name = "mu-seek"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "jupyter>=1.1.1",
+    "plotnine>=0.14.5",
+    "polars>=1.31.0",
+    "pyarrow>=20.0.0",
+    "rich>=14.0.0",
+]
+
+[dependency-groups]
+dev = ["pyright>=1.1.402", "ruff>=0.12.0"]
+
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+extend-select = ["E", "F", "W", "C", "B", "I", "UP", "PL", "RUF"]
+ignore = ["E203", "D103", "F841", "PLR0913"]
+exclude = [".git", "__pycache__", ".venv", "dist", "build"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["python_ggplot"]
+lines-between-types = 1
+combine-as-imports = true
+split-on-trailing-comma = true
+order-by-type = true
+case-sensitive = false
+force-sort-within-sections = false
+lines-after-imports = 2
+
+[tool.ruff.lint.pyupgrade]
+keep-runtime-typing = false
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+"tests/*" = ["S101"]
+
+
+[tool.flake8]
+max-line-length = 88
+ignore = ["E203", "W503"]
+exclude = [".git", "__pycache__", "venv"]
