@@ -5,9 +5,11 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "datasketch>=1.6.5",
     "hdbscan>=0.8.40",
     "jupyter>=1.1.1",
     "kmapper>=2.1.0",
+    "networkx>=3.5",
     "openrouter>=1.0",
     "plotnine>=0.14.5",
     "polars>=1.31.0",
